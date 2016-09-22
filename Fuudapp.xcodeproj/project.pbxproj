@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EDB386041D94231B0015CF10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB386031D94231B0015CF10 /* main.m */; };
+		EDB386071D94231B0015CF10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB386061D94231B0015CF10 /* AppDelegate.m */; };
+		EDB3860A1D94231B0015CF10 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB386091D94231B0015CF10 /* FirstViewController.m */; };
+		EDB3860D1D94231B0015CF10 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB3860C1D94231B0015CF10 /* SecondViewController.m */; };
+		EDB386101D94231B0015CF10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB3860E1D94231B0015CF10 /* Main.storyboard */; };
+		EDB386121D94231B0015CF10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDB386111D94231B0015CF10 /* Assets.xcassets */; };
+		EDB386151D94231B0015CF10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDB386131D94231B0015CF10 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EDB385FF1D94231B0015CF10 /* Fuudapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fuudapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDB386031D94231B0015CF10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EDB386051D94231B0015CF10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EDB386061D94231B0015CF10 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EDB386081D94231B0015CF10 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		EDB386091D94231B0015CF10 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		EDB3860B1D94231B0015CF10 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		EDB3860C1D94231B0015CF10 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		EDB3860F1D94231B0015CF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EDB386111D94231B0015CF10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDB386141D94231B0015CF10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EDB386161D94231B0015CF10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EDB385FC1D94231B0015CF10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EDB385F61D94231B0015CF10 = {
+			isa = PBXGroup;
+			children = (
+				EDB386011D94231B0015CF10 /* Fuudapp */,
+				EDB386001D94231B0015CF10 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EDB386001D94231B0015CF10 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EDB385FF1D94231B0015CF10 /* Fuudapp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EDB386011D94231B0015CF10 /* Fuudapp */ = {
+			isa = PBXGroup;
+			children = (
+				EDB386051D94231B0015CF10 /* AppDelegate.h */,
+				EDB386061D94231B0015CF10 /* AppDelegate.m */,
+				EDB386081D94231B0015CF10 /* FirstViewController.h */,
+				EDB386091D94231B0015CF10 /* FirstViewController.m */,
+				EDB3860B1D94231B0015CF10 /* SecondViewController.h */,
+				EDB3860C1D94231B0015CF10 /* SecondViewController.m */,
+				EDB3860E1D94231B0015CF10 /* Main.storyboard */,
+				EDB386111D94231B0015CF10 /* Assets.xcassets */,
+				EDB386131D94231B0015CF10 /* LaunchScreen.storyboard */,
+				EDB386161D94231B0015CF10 /* Info.plist */,
+				EDB386021D94231B0015CF10 /* Supporting Files */,
+			);
+			path = Fuudapp;
+			sourceTree = "<group>";
+		};
+		EDB386021D94231B0015CF10 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDB386031D94231B0015CF10 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EDB385FE1D94231B0015CF10 /* Fuudapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDB386191D94231B0015CF10 /* Build configuration list for PBXNativeTarget "Fuudapp" */;
+			buildPhases = (
+				EDB385FB1D94231B0015CF10 /* Sources */,
+				EDB385FC1D94231B0015CF10 /* Frameworks */,
+				EDB385FD1D94231B0015CF10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fuudapp;
+			productName = Fuudapp;
+			productReference = EDB385FF1D94231B0015CF10 /* Fuudapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EDB385F71D94231B0015CF10 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Fuudapp;
+				TargetAttributes = {
+					EDB385FE1D94231B0015CF10 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = EDXP6Y48QS;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = EDB385FA1D94231B0015CF10 /* Build configuration list for PBXProject "Fuudapp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EDB385F61D94231B0015CF10;
+			productRefGroup = EDB386001D94231B0015CF10 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EDB385FE1D94231B0015CF10 /* Fuudapp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EDB385FD1D94231B0015CF10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB386151D94231B0015CF10 /* LaunchScreen.storyboard in Resources */,
+				EDB386121D94231B0015CF10 /* Assets.xcassets in Resources */,
+				EDB386101D94231B0015CF10 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EDB385FB1D94231B0015CF10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDB3860D1D94231B0015CF10 /* SecondViewController.m in Sources */,
+				EDB386071D94231B0015CF10 /* AppDelegate.m in Sources */,
+				EDB3860A1D94231B0015CF10 /* FirstViewController.m in Sources */,
+				EDB386041D94231B0015CF10 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EDB3860E1D94231B0015CF10 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB3860F1D94231B0015CF10 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EDB386131D94231B0015CF10 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EDB386141D94231B0015CF10 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EDB386171D94231B0015CF10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EDB386181D94231B0015CF10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EDB3861A1D94231B0015CF10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EDXP6Y48QS;
+				INFOPLIST_FILE = Fuudapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fuudapp.Fuudapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EDB3861B1D94231B0015CF10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EDXP6Y48QS;
+				INFOPLIST_FILE = Fuudapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fuudapp.Fuudapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EDB385FA1D94231B0015CF10 /* Build configuration list for PBXProject "Fuudapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB386171D94231B0015CF10 /* Debug */,
+				EDB386181D94231B0015CF10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EDB386191D94231B0015CF10 /* Build configuration list for PBXNativeTarget "Fuudapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDB3861A1D94231B0015CF10 /* Debug */,
+				EDB3861B1D94231B0015CF10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EDB385F71D94231B0015CF10 /* Project object */;
+}
