@@ -22,7 +22,7 @@
     [super viewDidLoad];
     self.itemsTableview.estimatedRowHeight = 301;
     self.itemsTableview.rowHeight = UITableViewAutomaticDimension;
-    [self.itemsTableview setContentInset:UIEdgeInsetsMake(52, 0, 0, 0)];
+    [self.itemsTableview setContentInset:UIEdgeInsetsMake(-22, 0, 0, 0)];
 }
 
 

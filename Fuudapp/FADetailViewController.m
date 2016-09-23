@@ -27,7 +27,7 @@
     [super viewDidLoad];
     self.detailTableView.estimatedRowHeight = 44;
     self.detailTableView.rowHeight = UITableViewAutomaticDimension;
-    [self.detailTableView setContentInset:UIEdgeInsetsMake(-22, 0, 0, 0)];
+//    [self.detailTableView setContentInset:UIEdgeInsetsMake(-22, 0, 0, 0)];
     [self.navigationController.interactivePopGestureRecognizer setDelegate:self];
 }
 
