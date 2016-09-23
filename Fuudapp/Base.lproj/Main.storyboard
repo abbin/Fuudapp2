@@ -160,11 +160,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tQ2-iT-FGx">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FADetailTableViewCellOne" rowHeight="209" id="4ph-3r-yrl" customClass="FADetailTableViewCellOne">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="209"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FADetailTableViewCellOne" rowHeight="195" id="4ph-3r-yrl" customClass="FADetailTableViewCellOne">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="195"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ph-3r-yrl" id="Uad-z1-D7H">
-                                            <frame key="frameInset" width="375" height="209"/>
+                                            <frame key="frameInset" width="375" height="195"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Burger Chop" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRg-II-DOz">
@@ -173,7 +173,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="I was paying 11$ for 512kbps connection last month. Now i have 100mbps connection for 32$. Here in india.﻿" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHV-am-MNs">
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                                     <color key="textColor" white="0.0" alpha="0.41993534482758621" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -196,18 +196,17 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₹ 25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yav-e2-9wO">
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" white="0.0" alpha="0.80431034482758623" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" white="0.0" alpha="0.6042025862068966" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="yav-e2-9wO" firstAttribute="top" secondItem="SHV-am-MNs" secondAttribute="bottom" constant="8" id="5Qw-vH-6rd"/>
+                                                <constraint firstItem="yav-e2-9wO" firstAttribute="top" secondItem="SHV-am-MNs" secondAttribute="bottom" constant="20" id="5Qw-vH-6rd"/>
                                                 <constraint firstItem="z5Y-MH-g0v" firstAttribute="leading" secondItem="Uad-z1-D7H" secondAttribute="leadingMargin" constant="8" id="74y-ne-VNh"/>
                                                 <constraint firstItem="SRg-II-DOz" firstAttribute="top" secondItem="Uad-z1-D7H" secondAttribute="topMargin" constant="8" id="7De-jf-Mkq"/>
                                                 <constraint firstItem="EJg-Ea-oWN" firstAttribute="top" secondItem="z5Y-MH-g0v" secondAttribute="bottom" constant="8" id="BfL-1q-AZj"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="yav-e2-9wO" secondAttribute="bottom" constant="8" id="NXL-kN-xVu"/>
                                                 <constraint firstItem="yav-e2-9wO" firstAttribute="leading" secondItem="Uad-z1-D7H" secondAttribute="leadingMargin" constant="8" id="XOR-Ur-ZeY"/>
                                                 <constraint firstItem="z5Y-MH-g0v" firstAttribute="top" secondItem="SRg-II-DOz" secondAttribute="bottom" constant="8" id="aJQ-4x-VBA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qOe-26-cKw" secondAttribute="trailing" constant="8" id="bbU-hU-nnu"/>
@@ -217,12 +216,13 @@
                                                 <constraint firstItem="qOe-26-cKw" firstAttribute="centerY" secondItem="SRg-II-DOz" secondAttribute="centerY" id="jxI-QH-pTr"/>
                                                 <constraint firstItem="SHV-am-MNs" firstAttribute="leading" secondItem="Uad-z1-D7H" secondAttribute="leadingMargin" constant="8" id="lQK-6d-vf8"/>
                                                 <constraint firstItem="EJg-Ea-oWN" firstAttribute="leading" secondItem="Uad-z1-D7H" secondAttribute="leadingMargin" constant="8" id="wed-fj-g3a"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yav-e2-9wO" secondAttribute="bottom" constant="0.67000000000000004" id="x2u-me-V8F"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FAIsOpenTableViewCell" rowHeight="50" id="dN3-5p-WUw" customClass="FAIsOpenTableViewCell">
-                                        <rect key="frame" x="0.0" y="237" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="223" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dN3-5p-WUw" id="rP5-HQ-j2A">
                                             <frame key="frameInset" width="375" height="50"/>
@@ -237,7 +237,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="0Ox-Iy-nrD" secondAttribute="bottom" constant="8" id="6ZA-GM-fhk"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0Ox-Iy-nrD" secondAttribute="trailing" constant="8" id="QZy-pr-Smu"/>
-                                                <constraint firstItem="0Ox-Iy-nrD" firstAttribute="top" secondItem="rP5-HQ-j2A" secondAttribute="topMargin" constant="8" id="Tvs-Xv-afk"/>
+                                                <constraint firstItem="0Ox-Iy-nrD" firstAttribute="top" secondItem="rP5-HQ-j2A" secondAttribute="topMargin" id="Tvs-Xv-afk"/>
                                                 <constraint firstItem="0Ox-Iy-nrD" firstAttribute="leading" secondItem="rP5-HQ-j2A" secondAttribute="leadingMargin" constant="8" id="icB-JQ-8wI"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -246,7 +246,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FAImageCollectionTableViewCell" rowHeight="116" id="6ol-pS-5aC" customClass="FAImageCollectionTableViewCell">
-                                        <rect key="frame" x="0.0" y="287" width="375" height="116"/>
+                                        <rect key="frame" x="0.0" y="273" width="375" height="116"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6ol-pS-5aC" id="L7I-na-eTz">
                                             <frame key="frameInset" width="375" height="116"/>
@@ -300,7 +300,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FAWorkingdaysTableViewCell" rowHeight="180" id="38N-0k-Syk" customClass="FAWorkingdaysTableViewCell">
-                                        <rect key="frame" x="0.0" y="403" width="375" height="180"/>
+                                        <rect key="frame" x="0.0" y="389" width="375" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="38N-0k-Syk" id="0ZA-cW-m2K">
                                             <frame key="frameInset" width="375" height="180"/>
@@ -424,11 +424,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FAReviewTableViewCell" rowHeight="123" id="Mph-vt-uRN" customClass="FAReviewTableViewCell">
-                                        <rect key="frame" x="0.0" y="583" width="375" height="123"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FAReviewTableViewCell" rowHeight="124" id="Mph-vt-uRN" customClass="FAReviewTableViewCell">
+                                        <rect key="frame" x="0.0" y="569" width="375" height="124"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mph-vt-uRN" id="Lhm-v6-bif">
-                                            <frame key="frameInset" width="375" height="123"/>
+                                            <frame key="frameInset" width="375" height="124"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10376198_740619292643932_6358245269005609953_n (1).jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Pkh-Rn-d2g">
@@ -455,8 +455,8 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple lost a customer. I already have great headsets and I'm for sure not going to keep track of a 2 inch adapter.﻿" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwd-x7-7ON">
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                                    <color key="textColor" white="0.0" alpha="0.60498383620689655" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -478,7 +478,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FAReadMoreReviewTableViewCell" rowHeight="50" id="grm-9S-b2i" customClass="FAReadMoreReviewTableViewCell">
-                                        <rect key="frame" x="0.0" y="706" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="693" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="grm-9S-b2i" id="LcK-iV-6oG">
                                             <frame key="frameInset" width="375" height="50"/>
@@ -498,7 +498,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FAHeaderTableViewCell" rowHeight="34" id="ia1-iP-NaA" customClass="FAHeaderTableViewCell">
-                                        <rect key="frame" x="0.0" y="756" width="375" height="34"/>
+                                        <rect key="frame" x="0.0" y="743" width="375" height="34"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ia1-iP-NaA" id="GyE-A4-m5W">
                                             <frame key="frameInset" width="375" height="34"/>
