@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED057CE21D950A4B009B954B /* FAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = ED057CE11D950A4B009B954B /* FAColor.m */; };
+		ED057CE51D950DDD009B954B /* FAImageCollectionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED057CE41D950DDD009B954B /* FAImageCollectionTableViewCell.m */; };
+		ED057CE81D95132B009B954B /* FAIsOpenTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED057CE71D95132B009B954B /* FAIsOpenTableViewCell.m */; };
+		ED057CEB1D951C31009B954B /* FAImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED057CEA1D951C31009B954B /* FAImageCollectionViewCell.m */; };
+		ED057CF11D9559B2009B954B /* FAWorkingdaysTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED057CF01D9559B2009B954B /* FAWorkingdaysTableViewCell.m */; };
+		ED057CF41D957748009B954B /* FAReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED057CF31D957748009B954B /* FAReviewTableViewCell.m */; };
+		ED057CF71D957EA6009B954B /* FAReadMoreReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED057CF61D957EA6009B954B /* FAReadMoreReviewTableViewCell.m */; };
+		ED057CFA1D957FA9009B954B /* FAHeaderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED057CF91D957FA9009B954B /* FAHeaderTableViewCell.m */; };
 		EDB386041D94231B0015CF10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB386031D94231B0015CF10 /* main.m */; };
 		EDB386071D94231B0015CF10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB386061D94231B0015CF10 /* AppDelegate.m */; };
 		EDB3860A1D94231B0015CF10 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB386091D94231B0015CF10 /* FirstViewController.m */; };
@@ -22,6 +30,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED057CE01D950A4B009B954B /* FAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAColor.h; sourceTree = "<group>"; };
+		ED057CE11D950A4B009B954B /* FAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAColor.m; sourceTree = "<group>"; };
+		ED057CE31D950DDD009B954B /* FAImageCollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAImageCollectionTableViewCell.h; sourceTree = "<group>"; };
+		ED057CE41D950DDD009B954B /* FAImageCollectionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAImageCollectionTableViewCell.m; sourceTree = "<group>"; };
+		ED057CE61D95132B009B954B /* FAIsOpenTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAIsOpenTableViewCell.h; sourceTree = "<group>"; };
+		ED057CE71D95132B009B954B /* FAIsOpenTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAIsOpenTableViewCell.m; sourceTree = "<group>"; };
+		ED057CE91D951C31009B954B /* FAImageCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAImageCollectionViewCell.h; sourceTree = "<group>"; };
+		ED057CEA1D951C31009B954B /* FAImageCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAImageCollectionViewCell.m; sourceTree = "<group>"; };
+		ED057CEF1D9559B2009B954B /* FAWorkingdaysTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAWorkingdaysTableViewCell.h; sourceTree = "<group>"; };
+		ED057CF01D9559B2009B954B /* FAWorkingdaysTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAWorkingdaysTableViewCell.m; sourceTree = "<group>"; };
+		ED057CF21D957748009B954B /* FAReviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAReviewTableViewCell.h; sourceTree = "<group>"; };
+		ED057CF31D957748009B954B /* FAReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAReviewTableViewCell.m; sourceTree = "<group>"; };
+		ED057CF51D957EA6009B954B /* FAReadMoreReviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAReadMoreReviewTableViewCell.h; sourceTree = "<group>"; };
+		ED057CF61D957EA6009B954B /* FAReadMoreReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAReadMoreReviewTableViewCell.m; sourceTree = "<group>"; };
+		ED057CF81D957FA9009B954B /* FAHeaderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAHeaderTableViewCell.h; sourceTree = "<group>"; };
+		ED057CF91D957FA9009B954B /* FAHeaderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAHeaderTableViewCell.m; sourceTree = "<group>"; };
 		EDB385FF1D94231B0015CF10 /* Fuudapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fuudapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDB386031D94231B0015CF10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EDB386051D94231B0015CF10 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,6 +100,8 @@
 			children = (
 				EDB386051D94231B0015CF10 /* AppDelegate.h */,
 				EDB386061D94231B0015CF10 /* AppDelegate.m */,
+				ED057CE01D950A4B009B954B /* FAColor.h */,
+				ED057CE11D950A4B009B954B /* FAColor.m */,
 				EDB386081D94231B0015CF10 /* FirstViewController.h */,
 				EDB386091D94231B0015CF10 /* FirstViewController.m */,
 				EDB386411D943E030015CF10 /* FANearbyTableViewCell.h */,
@@ -86,6 +112,20 @@
 				EDB386471D9447D90015CF10 /* FADetailViewController.m */,
 				EDB386491D9450440015CF10 /* FADetailTableViewCellOne.h */,
 				EDB3864A1D9450440015CF10 /* FADetailTableViewCellOne.m */,
+				ED057CE61D95132B009B954B /* FAIsOpenTableViewCell.h */,
+				ED057CE71D95132B009B954B /* FAIsOpenTableViewCell.m */,
+				ED057CE31D950DDD009B954B /* FAImageCollectionTableViewCell.h */,
+				ED057CE41D950DDD009B954B /* FAImageCollectionTableViewCell.m */,
+				ED057CE91D951C31009B954B /* FAImageCollectionViewCell.h */,
+				ED057CEA1D951C31009B954B /* FAImageCollectionViewCell.m */,
+				ED057CEF1D9559B2009B954B /* FAWorkingdaysTableViewCell.h */,
+				ED057CF01D9559B2009B954B /* FAWorkingdaysTableViewCell.m */,
+				ED057CF21D957748009B954B /* FAReviewTableViewCell.h */,
+				ED057CF31D957748009B954B /* FAReviewTableViewCell.m */,
+				ED057CF51D957EA6009B954B /* FAReadMoreReviewTableViewCell.h */,
+				ED057CF61D957EA6009B954B /* FAReadMoreReviewTableViewCell.m */,
+				ED057CF81D957FA9009B954B /* FAHeaderTableViewCell.h */,
+				ED057CF91D957FA9009B954B /* FAHeaderTableViewCell.m */,
 				EDB3860E1D94231B0015CF10 /* Main.storyboard */,
 				EDB3863F1D9432E90015CF10 /* food-photography-perth3.jpg */,
 				EDB386441D9442920015CF10 /* 10376198_740619292643932_6358245269005609953_n (1).jpg */,
@@ -179,10 +219,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED057CE51D950DDD009B954B /* FAImageCollectionTableViewCell.m in Sources */,
 				EDB386481D9447D90015CF10 /* FADetailViewController.m in Sources */,
+				ED057CE81D95132B009B954B /* FAIsOpenTableViewCell.m in Sources */,
+				ED057CF71D957EA6009B954B /* FAReadMoreReviewTableViewCell.m in Sources */,
+				ED057CF11D9559B2009B954B /* FAWorkingdaysTableViewCell.m in Sources */,
 				EDB3860D1D94231B0015CF10 /* SecondViewController.m in Sources */,
+				ED057CF41D957748009B954B /* FAReviewTableViewCell.m in Sources */,
+				ED057CE21D950A4B009B954B /* FAColor.m in Sources */,
 				EDB386071D94231B0015CF10 /* AppDelegate.m in Sources */,
+				ED057CFA1D957FA9009B954B /* FAHeaderTableViewCell.m in Sources */,
 				EDB3860A1D94231B0015CF10 /* FirstViewController.m in Sources */,
+				ED057CEB1D951C31009B954B /* FAImageCollectionViewCell.m in Sources */,
 				EDB3864B1D9450440015CF10 /* FADetailTableViewCellOne.m in Sources */,
 				EDB386041D94231B0015CF10 /* main.m in Sources */,
 				EDB386431D943E030015CF10 /* FANearbyTableViewCell.m in Sources */,
