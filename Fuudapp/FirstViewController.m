@@ -9,8 +9,9 @@
 #import "FirstViewController.h"
 #import "FANearbyTableViewCell.h"
 #import "FADetailViewController.h"
+#import "UIViewController+YMSPhotoHelper.h"
 
-@interface FirstViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface FirstViewController ()<UITableViewDataSource,UITableViewDelegate,YMSPhotoPickerViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *itemsTableview;
 
@@ -47,6 +48,25 @@
 
 - (IBAction)titleButtonClicked:(id)sender {
     
+}
+
+- (IBAction)add:(id)sender {
+    // Custom selection number
+    YMSPhotoPickerViewController *pickerViewController = [[YMSPhotoPickerViewController alloc] init];
+    pickerViewController.numberOfPhotoToSelect = 3;
+    
+    UIColor *customColor = [UIColor colorWithRed:248.0/255.0 green:217.0/255.0 blue:44.0/255.0 alpha:1.0];
+    
+    pickerViewController.theme.titleLabelTextColor = [UIColor blackColor];
+    pickerViewController.theme.navigationBarBackgroundColor = customColor;
+    pickerViewController.theme.tintColor = [UIColor blackColor];
+    pickerViewController.theme.orderTintColor = customColor;
+    pickerViewController.theme.orderLabelTextColor = [UIColor blackColor];
+    pickerViewController.theme.cameraVeilColor = customColor;
+    pickerViewController.theme.cameraIconColor = [UIColor whiteColor];
+    pickerViewController.theme.statusBarStyle = UIStatusBarStyleDefault;
+    
+    [self yms_presentCustomAlbumPhotoView:pickerViewController delegate:self];
 }
 
 @end

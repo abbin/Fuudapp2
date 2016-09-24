@@ -27,9 +27,13 @@
 		EDB386451D9442920015CF10 /* 10376198_740619292643932_6358245269005609953_n (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = EDB386441D9442920015CF10 /* 10376198_740619292643932_6358245269005609953_n (1).jpg */; };
 		EDB386481D9447D90015CF10 /* FADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB386471D9447D90015CF10 /* FADetailViewController.m */; };
 		EDB3864B1D9450440015CF10 /* FADetailTableViewCellOne.m in Sources */ = {isa = PBXBuildFile; fileRef = EDB3864A1D9450440015CF10 /* FADetailTableViewCellOne.m */; };
+		F7FCAC959E58214AF313A0C2 /* libPods-Fuudapp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E119A889FC0F5CD3731B7D38 /* libPods-Fuudapp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7BBB8A1198C0CC5B2ED69A90 /* Pods-Fuudapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fuudapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Fuudapp/Pods-Fuudapp.release.xcconfig"; sourceTree = "<group>"; };
+		DE9E63DAB57C9576CCA4667C /* Pods-Fuudapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fuudapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fuudapp/Pods-Fuudapp.debug.xcconfig"; sourceTree = "<group>"; };
+		E119A889FC0F5CD3731B7D38 /* libPods-Fuudapp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Fuudapp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED057CE01D950A4B009B954B /* FAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAColor.h; sourceTree = "<group>"; };
 		ED057CE11D950A4B009B954B /* FAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FAColor.m; sourceTree = "<group>"; };
 		ED057CE31D950DDD009B954B /* FAImageCollectionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FAImageCollectionTableViewCell.h; sourceTree = "<group>"; };
@@ -73,17 +77,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7FCAC959E58214AF313A0C2 /* libPods-Fuudapp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F9368AA6DFE8BD65A55A217 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE9E63DAB57C9576CCA4667C /* Pods-Fuudapp.debug.xcconfig */,
+				7BBB8A1198C0CC5B2ED69A90 /* Pods-Fuudapp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		311963210076D6B4D2D3794F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E119A889FC0F5CD3731B7D38 /* libPods-Fuudapp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EDB385F61D94231B0015CF10 = {
 			isa = PBXGroup;
 			children = (
 				EDB386011D94231B0015CF10 /* Fuudapp */,
 				EDB386001D94231B0015CF10 /* Products */,
+				1F9368AA6DFE8BD65A55A217 /* Pods */,
+				311963210076D6B4D2D3794F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EDB386191D94231B0015CF10 /* Build configuration list for PBXNativeTarget "Fuudapp" */;
 			buildPhases = (
+				67365651A7B17CB17D3EE560 /* [CP] Check Pods Manifest.lock */,
 				EDB385FB1D94231B0015CF10 /* Sources */,
 				EDB385FC1D94231B0015CF10 /* Frameworks */,
 				EDB385FD1D94231B0015CF10 /* Resources */,
+				BC6945957FDF74D7CB2463D2 /* [CP] Embed Pods Frameworks */,
+				EF72FD77F05A6505A34B3E1C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,6 +240,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67365651A7B17CB17D3EE560 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BC6945957FDF74D7CB2463D2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fuudapp/Pods-Fuudapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF72FD77F05A6505A34B3E1C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Fuudapp/Pods-Fuudapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EDB385FB1D94231B0015CF10 /* Sources */ = {
@@ -349,6 +424,7 @@
 		};
 		EDB3861A1D94231B0015CF10 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE9E63DAB57C9576CCA4667C /* Pods-Fuudapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EDXP6Y48QS;
@@ -362,6 +438,7 @@
 		};
 		EDB3861B1D94231B0015CF10 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BBB8A1198C0CC5B2ED69A90 /* Pods-Fuudapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EDXP6Y48QS;
