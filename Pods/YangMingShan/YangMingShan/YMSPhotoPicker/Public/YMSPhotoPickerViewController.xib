@@ -2,14 +2,16 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YMSPhotoPickerViewController">
             <connections>
-                <outlet property="navigationBar" destination="Hjz-l4-ipX" id="D2j-M2-g4Y"/>
-                <outlet property="navigationBarBackgroundView" destination="QRP-cu-IBQ" id="OjV-S8-cB4"/>
-                <outlet property="navigationBarTopLayoutConstraint" destination="wcO-ae-iNw" id="bBD-Bs-0Lw"/>
+                <outlet property="albumButton" destination="V0d-at-elo" id="Ldg-eE-0RN"/>
+                <outlet property="doneItem" destination="U7R-0l-Igp" id="iCj-jJ-QLf"/>
+                <outlet property="navigationBarTopLayoutConstraint" destination="BSJ-qt-pWB" id="jWw-II-uN4"/>
                 <outlet property="photoCollectionView" destination="4eg-zN-avL" id="h9q-2l-7iJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,37 +29,77 @@
                         <outlet property="delegate" destination="-1" id="vTu-AA-3RI"/>
                     </connections>
                 </collectionView>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRP-cu-IBQ">
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hjz-l4-ipX">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45X-Hz-bHw">
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dowArrow" translatesAutoresizingMaskIntoConstraints="NO" id="eHd-zQ-IZL">
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="eHd-zQ-IZL" secondAttribute="height" multiplier="1:1" id="m22-B9-xcH"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0d-at-elo">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="19" maxY="0.0"/>
+                            <state key="normal" title="Camera Roll">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="presentAlbumPickerView:" destination="-1" eventType="touchUpInside" id="2Gw-Yc-POr"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Sv-xG-nbR">
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="7Sv-xG-nbR" secondAttribute="height" multiplier="1:1" id="ohe-BT-id1"/>
+                            </constraints>
+                            <state key="normal" image="close"/>
+                            <connections>
+                                <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="GrS-FJ-P4H"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="cqm-7K-Unv">
-                            <variation key="heightClass=compact" constant="32"/>
-                        </constraint>
+                        <constraint firstItem="V0d-at-elo" firstAttribute="leading" secondItem="45X-Hz-bHw" secondAttribute="leading" constant="15" id="98H-mt-2Gn"/>
+                        <constraint firstAttribute="bottom" secondItem="V0d-at-elo" secondAttribute="bottom" id="TRe-oJ-vmM"/>
+                        <constraint firstItem="eHd-zQ-IZL" firstAttribute="centerY" secondItem="V0d-at-elo" secondAttribute="centerY" id="Tk0-vn-Que"/>
+                        <constraint firstItem="eHd-zQ-IZL" firstAttribute="trailing" secondItem="V0d-at-elo" secondAttribute="trailing" id="To9-7D-RsI"/>
+                        <constraint firstAttribute="bottom" secondItem="7Sv-xG-nbR" secondAttribute="bottom" constant="15" id="VgF-UJ-mSj"/>
+                        <constraint firstItem="7Sv-xG-nbR" firstAttribute="top" secondItem="45X-Hz-bHw" secondAttribute="top" constant="30" id="bKM-Xu-DMC"/>
+                        <constraint firstAttribute="height" constant="84" id="iXz-p1-QLz"/>
+                        <constraint firstItem="eHd-zQ-IZL" firstAttribute="height" secondItem="V0d-at-elo" secondAttribute="height" multiplier="0.2" id="oFS-3w-iqE"/>
+                        <constraint firstItem="V0d-at-elo" firstAttribute="top" secondItem="45X-Hz-bHw" secondAttribute="top" constant="22" id="pvH-by-76U"/>
+                        <constraint firstAttribute="trailing" secondItem="7Sv-xG-nbR" secondAttribute="trailing" constant="15" id="q9m-g8-rce"/>
                     </constraints>
-                    <textAttributes key="titleTextAttributes">
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </textAttributes>
-                    <items>
-                        <navigationItem id="k5M-DK-7zB"/>
-                    </items>
-                </navigationBar>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7R-0l-Igp">
+                    <color key="backgroundColor" red="0.74117647058823533" green="0.031372549019607843" blue="0.10980392156862745" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="U7R-0l-Igp" secondAttribute="height" multiplier="1:1" id="UMO-HG-qAR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <state key="normal" title="✓"/>
+                    <connections>
+                        <action selector="finishPickingPhotos:" destination="-1" eventType="touchUpInside" id="9zR-SK-XiT"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="QRP-cu-IBQ" firstAttribute="trailing" secondItem="Hjz-l4-ipX" secondAttribute="trailing" id="60y-QB-Mh5"/>
-                <constraint firstItem="Hjz-l4-ipX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="CbG-3J-QKQ"/>
+                <constraint firstItem="45X-Hz-bHw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BSJ-qt-pWB"/>
                 <constraint firstItem="4eg-zN-avL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="G1o-kN-h3L"/>
                 <constraint firstAttribute="bottom" secondItem="4eg-zN-avL" secondAttribute="bottom" id="HY4-8g-3cg"/>
-                <constraint firstItem="QRP-cu-IBQ" firstAttribute="top" secondItem="Hjz-l4-ipX" secondAttribute="top" id="JqE-Cg-CJi"/>
-                <constraint firstItem="QRP-cu-IBQ" firstAttribute="bottom" secondItem="Hjz-l4-ipX" secondAttribute="bottom" id="Qg3-GE-X8W"/>
-                <constraint firstAttribute="trailing" secondItem="Hjz-l4-ipX" secondAttribute="trailing" id="TSg-91-hAe"/>
-                <constraint firstItem="4eg-zN-avL" firstAttribute="top" secondItem="Hjz-l4-ipX" secondAttribute="bottom" id="YyS-iM-2Nj"/>
-                <constraint firstItem="QRP-cu-IBQ" firstAttribute="leading" secondItem="Hjz-l4-ipX" secondAttribute="leading" id="feb-Su-kDN"/>
+                <constraint firstItem="4eg-zN-avL" firstAttribute="top" secondItem="45X-Hz-bHw" secondAttribute="bottom" id="Jwb-pH-83W"/>
+                <constraint firstAttribute="trailing" secondItem="U7R-0l-Igp" secondAttribute="trailing" constant="10" id="KT2-G3-I1F"/>
+                <constraint firstItem="U7R-0l-Igp" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.1" id="NG5-L1-S7a"/>
+                <constraint firstAttribute="trailing" secondItem="45X-Hz-bHw" secondAttribute="trailing" id="hdb-Py-5Om"/>
+                <constraint firstItem="45X-Hz-bHw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pCF-p5-Ydz"/>
                 <constraint firstAttribute="trailing" secondItem="4eg-zN-avL" secondAttribute="trailing" id="tJj-hI-9JX"/>
-                <constraint firstItem="Hjz-l4-ipX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wcO-ae-iNw"/>
+                <constraint firstAttribute="bottom" secondItem="U7R-0l-Igp" secondAttribute="bottom" constant="15" id="yaQ-eI-0Ft"/>
             </constraints>
+            <point key="canvasLocation" x="-68.5" y="235.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="close" width="42" height="42"/>
+        <image name="dowArrow" width="17" height="17"/>
+    </resources>
 </document>

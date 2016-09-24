@@ -21,14 +21,13 @@
 static NSString * const YMSCameraCellNibName = @"YMSCameraCell";
 static NSString * const YMSPhotoCellNibName = @"YMSPhotoCell";
 static const NSUInteger YMSNumberOfPhotoColumns = 3;
-static const CGFloat YMSNavigationBarMaxTopSpace = 44.0;
+static const CGFloat YMSNavigationBarMaxTopSpace = 84.0;
 static const CGFloat YMSNavigationBarOriginalTopSpace = 0.0;
 static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
 
 @interface YMSPhotoPickerViewController ()<UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout, UIImagePickerControllerDelegate, UINavigationControllerDelegate, PHPhotoLibraryChangeObserver>
 
-@property (nonatomic, weak) IBOutlet UINavigationBar *navigationBar;
-@property (nonatomic, weak) IBOutlet UIView *navigationBarBackgroundView;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *albumButton;
 @property (nonatomic, weak) IBOutlet UICollectionView *photoCollectionView;
 @property (nonatomic, strong) PHImageManager *imageManager;
 @property (nonatomic, weak) AVCaptureSession *session;
@@ -36,10 +35,10 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
 @property (nonatomic, strong) NSDictionary *currentCollectionItem;
 @property (nonatomic, weak) IBOutlet NSLayoutConstraint *navigationBarTopLayoutConstraint;
 @property (nonatomic, strong) NSMutableArray *selectedPhotos;
-@property (nonatomic, strong) UIBarButtonItem *doneItem;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *doneItem;
+
 @property (nonatomic, assign) BOOL needToSelectFirstPhoto;
 @property (nonatomic, assign) CGSize cellPortraitSize;
-@property (nonatomic, assign) CGSize cellLandscapeSize;
 
 - (IBAction)dismiss:(id)sender;
 - (IBAction)presentAlbumPickerView:(id)sender;
@@ -61,7 +60,7 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
     self = [super initWithNibName:NSStringFromClass(self.class) bundle:[NSBundle bundleForClass:self.class]];
     if (self) {
         self.selectedPhotos = [NSMutableArray array];
-        self.numberOfPhotoToSelect = 1;
+        self.numberOfPhotoToSelect = 3;
     }
     return self;
 }
@@ -86,27 +85,14 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
 
     [self fetchCollections];
 
-    UINavigationItem *navigationItem = [[UINavigationItem alloc] init];
-    navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss:)];
-
     if (self.allowsMultipleSelection) {
-        // Add done button for multiple selections
-        self.doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(finishPickingPhotos:)];
         self.doneItem.enabled = NO;
-        navigationItem.rightBarButtonItem = self.doneItem;
-    }
-
-    self.navigationBar.items = @[navigationItem];
-
-    if (![self.theme.navigationBarBackgroundColor isEqual:[UIColor whiteColor]]) {
-        [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        [self.navigationBar setShadowImage:[UIImage new]];
-        self.navigationBarBackgroundView.backgroundColor = self.theme.navigationBarBackgroundColor;
+        self.doneItem.alpha = 0;
+        self.doneItem.layer.cornerRadius = self.view.frame.size.height*0.1/2;
+        self.doneItem.layer.masksToBounds = YES;
     }
     
     [self updateViewWithCollectionItem:[self.collectionItems firstObject]];
-
-    self.cellPortraitSize = self.cellLandscapeSize = CGSizeZero;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -241,6 +227,9 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
         PHAsset *asset = fetchResult[indexPath.item-1];
         [self.selectedPhotos addObject:asset];
         self.doneItem.enabled = YES;
+        [UIView animateWithDuration:0.3 animations:^{
+            self.doneItem.alpha = 1;
+        }];
     }
 }
 
@@ -281,13 +270,16 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
     [self.selectedPhotos removeObject:asset];
     if (self.selectedPhotos.count == 0) {
         self.doneItem.enabled = NO;
+        [UIView animateWithDuration:0.3 animations:^{
+            self.doneItem.alpha = 0;
+        }];
     }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        if (CGSizeEqualToSize(CGSizeZero, self.cellPortraitSize) || CGSizeEqualToSize(CGSizeZero, self.cellLandscapeSize)) {
+        if (CGSizeEqualToSize(CGSizeZero, self.cellPortraitSize)) {
             [self setupCellSize];
         }
         return self.cellPortraitSize;
@@ -426,22 +418,8 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
     self.currentCollectionItem = collectionItem;
     PHCollection *photoCollection = self.currentCollectionItem[@"collection"];
     
-    UIButton *albumButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    albumButton.tintColor = self.theme.titleLabelTextColor;
-    albumButton.titleLabel.font = self.theme.titleLabelFont;
-    [albumButton addTarget:self action:@selector(presentAlbumPickerView:) forControlEvents:UIControlEventTouchUpInside];
-    [albumButton setTitle:photoCollection.localizedTitle forState:UIControlStateNormal];
-    UIImage *arrowDownImage = [UIImage imageNamed:@"YMSIconSpinnerDropdwon" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil];
-    arrowDownImage = [arrowDownImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [albumButton setImage:arrowDownImage forState:UIControlStateNormal];
-    [albumButton sizeToFit];
-    albumButton.imageEdgeInsets = UIEdgeInsetsMake(0.0, albumButton.frame.size.width - (arrowDownImage.size.width) + 10, 0.0, 0.0);
-    albumButton.titleEdgeInsets = UIEdgeInsetsMake(0.0, -arrowDownImage.size.width, 0.0, arrowDownImage.size.width + 10);
-    // width + 10 for the space between text and image
-    albumButton.frame = CGRectMake(0.0, 0.0, CGRectGetWidth(albumButton.bounds) + 10, CGRectGetHeight(albumButton.bounds));
-
-    [self.navigationBar.items firstObject].titleView = albumButton;
-
+    [self.albumButton setTitle:photoCollection.localizedTitle forState:UIControlStateNormal];
+    
     [self.photoCollectionView reloadData];
     [self refreshPhotoSelection];
 }
@@ -567,14 +545,6 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
     CGFloat size = (CGFloat)floor((arrangementLength - totalHorizontalSpacing) / YMSNumberOfPhotoColumns);
     CGFloat height = size*4/3;
     self.cellPortraitSize = CGSizeMake(size, height);
-
-    // Caculate size for landsacpe mode
-    arrangementLength = MAX(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
-    NSUInteger numberOfPhotoColumnsInLandscape = (arrangementLength - sectionInset.left + sectionInset.right)/size;
-    totalInteritemSpacing = MAX((numberOfPhotoColumnsInLandscape - 1), 0) * minimumInteritemSpacing;
-    totalHorizontalSpacing = totalInteritemSpacing + sectionInset.left + sectionInset.right;
-    size = (CGFloat)floor((arrangementLength - totalHorizontalSpacing) / numberOfPhotoColumnsInLandscape);
-    self.cellLandscapeSize = CGSizeMake(size, size*4/3);
 }
 
 #pragma mark - PHPhotoLibraryChangeObserver
@@ -595,6 +565,9 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
             PHAsset *asset = [fetchResult firstObject];
             [self.selectedPhotos addObject:asset];
             self.doneItem.enabled = YES;
+            [UIView animateWithDuration:0.3 animations:^{
+                self.doneItem.alpha = 1;
+            }];
         }
 
         return;
@@ -676,6 +649,9 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
                     PHAsset *asset = [fetchResult firstObject];
                     [self.selectedPhotos addObject:asset];
                     self.doneItem.enabled = YES;
+                    [UIView animateWithDuration:0.3 animations:^{
+                        self.doneItem.alpha = 1;
+                    }];
                 }
                 [self refreshPhotoSelection];
             }];
@@ -687,27 +663,27 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    // Measure table view scolling position is between the expectation
-    if (scrollView.contentOffset.y > YMSNavigationBarOriginalTopSpace
-        && scrollView.contentOffset.y + CGRectGetHeight(scrollView.bounds) < scrollView.contentSize.height - 1) {
-        CGFloat topLayoutConstraintConstant = self.navigationBarTopLayoutConstraint.constant - (scrollView.contentOffset.y - scrollView.lastContentOffset.y);
-
-        // When next top constant is longer than maximum
-        if (topLayoutConstraintConstant < -YMSNavigationBarMaxTopSpace) {
-            self.navigationBarTopLayoutConstraint.constant = -YMSNavigationBarMaxTopSpace;
-        }
-        // When next top constant is smaller than the minimum
-        else if (topLayoutConstraintConstant > YMSNavigationBarOriginalTopSpace) {
-            self.navigationBarTopLayoutConstraint.constant = YMSNavigationBarOriginalTopSpace;
-        }
-        // Adjust navigation bar top space
-        else {
-            self.navigationBarTopLayoutConstraint.constant = topLayoutConstraintConstant;
-        }
-
-        CGFloat navigationBarAlphaStatus = 1.0 - self.navigationBarTopLayoutConstraint.constant/(YMSNavigationBarOriginalTopSpace - YMSNavigationBarMaxTopSpace);
-        self.navigationBar.alpha = navigationBarAlphaStatus;
-    }
+//    // Measure table view scolling position is between the expectation
+//    if (scrollView.contentOffset.y > YMSNavigationBarOriginalTopSpace
+//        && scrollView.contentOffset.y + CGRectGetHeight(scrollView.bounds) < scrollView.contentSize.height - 1) {
+//        CGFloat topLayoutConstraintConstant = self.navigationBarTopLayoutConstraint.constant - (scrollView.contentOffset.y - scrollView.lastContentOffset.y);
+//
+//        // When next top constant is longer than maximum
+//        if (topLayoutConstraintConstant < -YMSNavigationBarMaxTopSpace) {
+//            self.navigationBarTopLayoutConstraint.constant = -YMSNavigationBarMaxTopSpace;
+//        }
+//        // When next top constant is smaller than the minimum
+//        else if (topLayoutConstraintConstant > YMSNavigationBarOriginalTopSpace) {
+//            self.navigationBarTopLayoutConstraint.constant = YMSNavigationBarOriginalTopSpace;
+//        }
+//        // Adjust navigation bar top space
+//        else {
+//            self.navigationBarTopLayoutConstraint.constant = topLayoutConstraintConstant;
+//        }
+//
+//        CGFloat navigationBarAlphaStatus = 1.0 - self.navigationBarTopLayoutConstraint.constant/(YMSNavigationBarOriginalTopSpace - YMSNavigationBarMaxTopSpace);
+//        
+//    }
 
     // Measure the scroll direction for adating animation in scrollViewDidEndDragging:
     [scrollView yms_scrollViewDidScroll];
@@ -715,24 +691,24 @@ static const CGFloat YMSPhotoFetchScaleResizingRatio = 0.75;
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    // measure the end point to add animation
-    if (self.navigationBarTopLayoutConstraint.constant > -YMSNavigationBarMaxTopSpace
-        && self.navigationBarTopLayoutConstraint.constant < YMSNavigationBarOriginalTopSpace) {
-
-        [UIView animateWithDuration:0.3 animations:^{
-            if (scrollView.scrollDirection == YMSScrollViewScrollDirectionUp) {
-                self.navigationBarTopLayoutConstraint.constant = -YMSNavigationBarMaxTopSpace;
-            }
-            else if (scrollView.scrollDirection == YMSScrollViewScrollDirectionDown) {
-                self.navigationBarTopLayoutConstraint.constant = YMSNavigationBarOriginalTopSpace;
-            }
-
-            CGFloat navigationBarAlphaStatus = 1.0 - self.navigationBarTopLayoutConstraint.constant/(YMSNavigationBarOriginalTopSpace - YMSNavigationBarMaxTopSpace);
-            self.navigationBar.alpha = navigationBarAlphaStatus;
-
-            [self.view layoutIfNeeded];
-        }];
-    }
+//    // measure the end point to add animation
+//    if (self.navigationBarTopLayoutConstraint.constant > -YMSNavigationBarMaxTopSpace
+//        && self.navigationBarTopLayoutConstraint.constant < YMSNavigationBarOriginalTopSpace) {
+//
+//        [UIView animateWithDuration:0.3 animations:^{
+//            if (scrollView.scrollDirection == YMSScrollViewScrollDirectionUp) {
+//                self.navigationBarTopLayoutConstraint.constant = -YMSNavigationBarMaxTopSpace;
+//            }
+//            else if (scrollView.scrollDirection == YMSScrollViewScrollDirectionDown) {
+//                self.navigationBarTopLayoutConstraint.constant = YMSNavigationBarOriginalTopSpace;
+//            }
+//
+//            CGFloat navigationBarAlphaStatus = 1.0 - self.navigationBarTopLayoutConstraint.constant/(YMSNavigationBarOriginalTopSpace - YMSNavigationBarMaxTopSpace);
+//            
+//
+//            [self.view layoutIfNeeded];
+//        }];
+//    }
 }
 
 @end

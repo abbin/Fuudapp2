@@ -178,8 +178,8 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
 #pragma mark - Init
 - (void)commonInit {
   _columnCount = 3;
-  _minimumColumnSpacing = 2;
-  _minimumInteritemSpacing = 2;
+  _minimumColumnSpacing = 5;
+  _minimumInteritemSpacing = 5;
   _headerHeight = 0;
   _footerHeight = 0;
   _sectionInset = UIEdgeInsetsZero;

@@ -13,9 +13,9 @@
 #import "YMSPhotoPickerTheme.h"
 
 static const CGFloat YMSHightedAnimationDuration = 0.15;
-static const CGFloat YMSUnhightedAnimationDuration = 0.4;
-static const CGFloat YMSHightedAnimationTransformScale = 0.9;
-static const CGFloat YMSUnhightedAnimationSpringDamping = 0.5;
+static const CGFloat YMSUnhightedAnimationDuration = 0.2;
+static const CGFloat YMSHightedAnimationTransformScale = 0.96;
+static const CGFloat YMSUnhightedAnimationSpringDamping = 0.8;
 static const CGFloat YMSUnhightedAnimationSpringVelocity = 6.0;
 
 @interface YMSPhotoCell()
@@ -46,12 +46,12 @@ static const CGFloat YMSUnhightedAnimationSpringVelocity = 6.0;
 
     self.selectionOrderLabel.textColor = [YMSPhotoPickerTheme sharedInstance].orderLabelTextColor;
     self.selectionOrderLabel.font = [YMSPhotoPickerTheme sharedInstance].selectionOrderLabelFont;
-
+    
     self.selectionVeil.layer.borderWidth = 4.0;
 
     self.selectionOrderLabel.backgroundColor = [YMSPhotoPickerTheme sharedInstance].orderTintColor;
     self.selectionVeil.layer.borderColor = [YMSPhotoPickerTheme sharedInstance].orderTintColor.CGColor;
-
+    
     [self prepareForReuse];
 }
 

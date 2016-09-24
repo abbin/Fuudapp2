@@ -23,8 +23,8 @@
 {
     [super awakeFromNib];
 
-    self.photosCountLabel.font = [YMSPhotoPickerTheme sharedInstance].photosCountLabelFont;
-    self.albumNameLabel.font = [YMSPhotoPickerTheme sharedInstance].albumNameLabelFont;
+//    self.photosCountLabel.font = [YMSPhotoPickerTheme sharedInstance].photosCountLabelFont;
+//    self.albumNameLabel.font = [YMSPhotoPickerTheme sharedInstance].albumNameLabelFont;
 }
 
 - (NSString *)YMS_cellIdentifier

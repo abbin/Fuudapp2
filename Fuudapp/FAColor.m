@@ -17,11 +17,11 @@
 @implementation FAColor
 
 +(UIColor*)FAGreen{
-    return UIColorFromRGB(0x3cba54);
+    return UIColorFromRGB(0x1cbd08);
 }
 
 +(UIColor*)FARed{
-    return UIColorFromRGB(0xdb3236);
+    return UIColorFromRGB(0xbd081c);
 }
 
 +(UIColor*)FAYellow{
